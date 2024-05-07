@@ -15,13 +15,10 @@ const fbr = 0.5; // fuel burn rate (kg/s)
 
 function unitConversion (acc, time) {
   // Convert the units of measurement
-  const accInMs = acc/3.6; // m/s^2
-  const timeInHr = time/3600; // s
+  const accInKmH = acc*3.6; // (Km/h)
+  const timeInHr = time/3600; // hours
 
-  return {
-    accInMs,
-    timeInHr
-  }
+  return {accInKmH, timeInHr}
   
 }
 const d2 = d + (vel*time) //calcultes new distance
