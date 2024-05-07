@@ -24,7 +24,7 @@ function unitConversion (acc, time) {
 const {accInKmH, timeInHr} = unitConversion(acc, time); //called the variables to the global scope so that I could use them as arguments  
 
 const d2 = d + (vel*timeInHr) //calcultes new distance
-const rf = fbr*time //calculates remaining fuel
+const rf = fuel - (fbr*time) //calculates remaining fuel
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
