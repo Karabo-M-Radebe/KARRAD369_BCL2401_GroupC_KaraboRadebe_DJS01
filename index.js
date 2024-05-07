@@ -16,11 +16,11 @@ const fbr = 0.5; // fuel burn rate (kg/s)
 function unitConversion (acc, time) {
   // Convert the units of measurement
   const accInMs = acc/3.6; // m/s^2
-  const timeInS = time/3600; // s
+  const timeInHr = time/3600; // s
 
   return {
     accInMs,
-    timeInS
+    timeInHr
   }
   
 }
