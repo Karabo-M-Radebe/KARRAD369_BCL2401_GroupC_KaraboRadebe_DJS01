@@ -15,12 +15,14 @@ const fbr = 0.5; // fuel burn rate (kg/s)
 
 function unitConversion (acc, time) {
   // Convert the units of measurement
-  const accInKmH = acc*3.6; // (Km/h)
+  const accInKmH = acc*3.6;  //(Km/h)
   const timeInHr = time/3600; // hours
 
   return {accInKmH, timeInHr}
   
 }
+const {accInKmH, timeInHr} = unitConversion(acc, time); //called the variables to the global scope so that I could use them as arguments  
+
 const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
