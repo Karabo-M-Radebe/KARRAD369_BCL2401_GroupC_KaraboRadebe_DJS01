@@ -13,7 +13,17 @@ const d = 0; // distance (km)
 const fuel = 5000; // remaining fuel (kg)
 const fbr = 0.5; // fuel burn rate (kg/s)
 
+function unitConversion (acc, time) {
+  // Convert the units of measurement
+  const accInMs = acc/3.6; // m/s^2
+  const timeInS = time/3600; // s
 
+  return {
+    accInMs,
+    timeInS
+  }
+  
+}
 const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
