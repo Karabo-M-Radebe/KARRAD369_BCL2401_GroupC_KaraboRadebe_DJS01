@@ -6,45 +6,45 @@
  */
 
 // Given Parameters
-const vel = 10000; // velocity (km/h)
-const acc = 3; // acceleration (m/s^2)
+const velocity = 10000; // velocityocity (km/h)
+const acceleration = 3; // acceleration (m/s^2)
 const time = 3600; // seconds (1 hour)
-const d = 0; // distance (km)
+const distance = 0; // distance (km)
 const fuel = 5000; // remaining fuel (kg)
-const fbr = 0.5; // fuel burn rate (kg/s)
+const fuelBurnRate  = 0.5; // fuel burn rate (kg/s)
 
 // Function that converts the units of measurement from meters to kilometers and from seconds to hours 
-function unitConversion (acc, time) {
-  const accInKmH = acc*3.6;  //(Km/h)
+function unitConversion (acceleration, time) {
+  const accelerationInKmH = acceleration*3.6;  //(Km/h)
   const timeInHr = time/3600; // hours
 
-  return {accInKmH, timeInHr}  
+  return {accelerationInKmH, timeInHr}  
 }
 
-const {accInKmH, timeInHr} = unitConversion(acc, time); //called the variables to the global scope so that I could use them as arguments  
+const {accelerationInKmH, timeInHr} = unitConversion(acceleration, time); //called the variables to the global scope so that I could use them as arguments  
 
-const d2 = d + (vel*timeInHr) //calcultes new distance - and I had to make sure it is in the correct unit of measurement 
-const rf = fuel - (fbr*time) //calculates remaining fuel
-const vel2 = calcNewVel(vel, accInKmH, time) //calculates new velocity based on acceleration
+const newDistance = distance + (velocity*timeInHr) //calcultes new distance - and I had to make sure it is in the correct unit of measurement 
+const remainingFuel = fuel - (fuelBurnRate*time) //calculates remaining fuel
+const velocity2 = calcNewvelocity(velocity, accelerationInKmH, time) //calculates new velocityocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
-function calcNewVel (vel, accInKmH, time) { 
-  return vel + (accInKmH*time)
+function calcNewvelocity (velocity, accInKmH, time) { 
+  return velocity + (accInKmH*time)
 }
 
-// try catch block that checks whether the calNewVel function uses the correct unit of measurement and throws and error if false
+// try catch block that checks whether the calNewvelocity function uses the correct unit of measurement and throws and error if false
 try {
-  if (calcNewVel() !== vel + (accInKmH*time)) {
+  if (calcNewvelocity() !== velocity + (accelerationInKmH*time)) {
     throw new Error("incorrect unit of measurement")
   } 
 } catch (error) {
   console.error(`Error: ${error.message}`)
 }
 
-console.log(accInKmH)
-console.log(`Corrected New Velocity: ${vel2} km/h`);
-console.log(`Corrected New Distance: ${d2} km`);
-console.log(`Corrected Remaining Fuel: ${rf} kg`);
+console.log(accelerationInKmH)
+console.log(`Corrected New velocity: ${velocity2} km/h`);
+console.log(`Corrected New Distance: ${newDistance} km`);
+console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
 
 
 
