@@ -29,6 +29,14 @@ const vel2 = calcNewVel(vel, accInKmH, time) //calculates new velocity based on 
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVel (vel, accInKmH, time) { 
+  if (calcNewVel == vel + (acc*timeInHr)){ //uncertain whether the '==' requires a '!' in front of it or not or whether the parameters need to change
+    try {
+      throw new Error("incorrect unit of measurement")
+    } catch (error) {
+      console.log(`Error: ${error.message}`)
+    }
+  };
+
   return vel + (accInKmH*time)
 }
 
