@@ -13,8 +13,8 @@ const d = 0; // distance (km)
 const fuel = 5000; // remaining fuel (kg)
 const fbr = 0.5; // fuel burn rate (kg/s)
 
+// Function that converts the units of measurement from meters to kilometers and from seconds to hours 
 function unitConversion (acc, time) {
-  // Convert the units of measurement
   const accInKmH = acc*3.6;  //(Km/h)
   const timeInHr = time/3600; // hours
 
@@ -23,7 +23,7 @@ function unitConversion (acc, time) {
 
 const {accInKmH, timeInHr} = unitConversion(acc, time); //called the variables to the global scope so that I could use them as arguments  
 
-const d2 = d + (vel*timeInHr) //calcultes new distance
+const d2 = d + (vel*timeInHr) //calcultes new distance - and I had to make sure it is in the correct unit of measurement 
 const rf = fuel - (fbr*time) //calculates remaining fuel
 const vel2 = calcNewVel(vel, accInKmH, time) //calculates new velocity based on acceleration
 
