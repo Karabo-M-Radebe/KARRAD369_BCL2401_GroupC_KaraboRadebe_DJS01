@@ -25,16 +25,16 @@ const {accelerationInKmH, timeInHr} = unitConversion(acceleration, time); //call
 
 const newDistance = distance + (velocity*timeInHr) //calcultes new distance - and I had to make sure it is in the correct unit of measurement 
 const remainingFuel = fuel - (fuelBurnRate*time) //calculates remaining fuel
-const velocity2 = calcNewvelocity(velocity, accelerationInKmH, time) //calculates new velocityocity based on acceleration
+const velocity2 = calcNewVelocity(velocity, accelerationInKmH, time) //calculates new velocityocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
-function calcNewvelocity (velocity, accInKmH, time) { 
-  return velocity + (accInKmH*time)
+function calcNewVelocity (velocity, accelerationInKmH, time) { 
+  return velocity + (accelerationInKmH*time)
 }
 
 // try catch block that checks whether the calNewvelocity function uses the correct unit of measurement and throws and error if false
 try {
-  if (calcNewvelocity() !== velocity + (accelerationInKmH*time)) {
+  if (calcNewVelocity() !== velocity + (accelerationInKmH*time)) {
     throw new Error("incorrect unit of measurement")
   } 
 } catch (error) {
