@@ -24,7 +24,7 @@ The Mars Climate Orbiter incident in 1999 is a stark reminder of the importance 
 # Reflections 
 
 ### Areas of mastery 
-
+- try catch blocks: I feel much more confident using the try catch block as a way of handling errors more effficiently. I can't wait to use this way more in future projects that I'll be working on.
 ### Challenges faced 
 - One of the main challenges I faced in this project was having to find a way to make the calculations robust such that the calculation does not give an incorrect result. Unsure whether this was a logic issue or a technical issue from my end but I struggled greatly with that until I was able to recieve some guidance from my Coach   
 
@@ -32,3 +32,4 @@ The Mars Climate Orbiter incident in 1999 is a stark reminder of the importance 
 - Throwing errors when there are calculations included: I need to improve on how I throw, catch and handle errors more effectively and know which functions to use in order to achieve this result. 
 
 ## Overall learning experience
+This project was a great way to practice debugging and refactoring code. I was able to learn a lot about the different ways to handle errors and how to use try catch blocks to handle errors more effectively. I genuinely learnt a lot during this project and had a very positive learning experience.  
