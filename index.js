@@ -34,7 +34,7 @@ function calcNewVelocity (velocity, accelerationInKmH, time) {
 
 // try catch block that checks whether the calNewvelocity function uses the correct unit of measurement and throws and error if false
 try {
-  if (calcNewVelocity() !== velocity + (accelerationInKmH*time)) {
+  if (calcNewVelocity(velocity, accelerationInKmH, time) !== velocity + (accelerationInKmH*time)) {
     throw new Error("incorrect unit of measurement")
   } 
 } catch (error) {
