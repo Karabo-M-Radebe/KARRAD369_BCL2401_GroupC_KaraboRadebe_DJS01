@@ -29,19 +29,26 @@ const velocity2 = calcNewVelocity(velocity, accelerationInKmH, time) //calculate
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVelocity (velocity, accelerationInKmH, time) { 
-  return velocity + (accelerationInKmH*time)
-}
-
-// try catch block that checks whether the calNewvelocity function uses the correct unit of measurement and throws and error if false
+   
+  // try catch block that checks whether the calNewvelocity function uses the correct unit of measurement and throws and error if false
 try {
-  if (calcNewVelocity(velocity, accelerationInKmH, time) !== velocity + (accelerationInKmH*time)) {
+  const velocity2 = velocity + (accelerationInKmH*time);
+
+  if (velocity2 !== velocity + (accelerationInKmH*time)) {
     throw new Error("incorrect unit of measurement")
-  } 
+  }  
+
+  return velocity2;
 } catch (error) {
-  console.error(`Error: ${error.message}`)
+  console.error(`Error: ${error.message}`);
+  throw error;
+}
+  
 }
 
-console.log(accelerationInKmH)
+
+
+
 console.log(`Corrected New velocity: ${velocity2} km/h`);
 console.log(`Corrected New Distance: ${newDistance} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
